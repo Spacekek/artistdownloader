@@ -20,7 +20,7 @@ def main():
     artist_search = types.Artist.search(sys.argv[1])
     artist_url = artist_search['artists']['items'][0]['external_urls']['spotify']
     artist = types.Artist.from_url(artist_url)
-    Print("Downloading all albums from " + artist.name)
+    print("Downloading all albums from " + artist.name)
     albums = types.Artist.get_albums(artist_url)
     albumnames = []
     for album in albums:
