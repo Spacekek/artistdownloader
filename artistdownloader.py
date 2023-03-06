@@ -37,9 +37,6 @@ def main():
             or "mix" in types.Album.get_metadata(album)['name'].lower() \
             or "edit" in types.Album.get_metadata(album)['name'].lower():
             continue
-        # if album contains less than 4 songs, skip
-        if len(types.Album.get_tracks(album)) < 4:
-            continue
         albumnames.append(types.Album.get_metadata(album)['name'])
         print("Downloading album: " + types.Album.get_metadata(album)['name'])
         # create directory for album
