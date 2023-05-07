@@ -27,6 +27,9 @@ def main():
     for album in artist.albums:
         current = Album.from_url(album)
         name = Album.get_metadata(album)[0]["name"]
+
+        if(Album.get_metadata(album)[1][0].tracks_count < 4):
+            continue
         # skip duplicate albums
         if name in albumnames:
             continue
