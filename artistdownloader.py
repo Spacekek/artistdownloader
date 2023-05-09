@@ -28,7 +28,7 @@ def main():
         current = Album.from_url(album)
         name = Album.get_metadata(album)[0]["name"]
 
-        if(Album.get_metadata(album)[1][0].tracks_count < 4):
+        if(Album.get_metadata(album)[1][0].tracks_count < 5):
             continue
         # skip duplicate albums
         if name in albumnames:
@@ -38,8 +38,6 @@ def main():
             or "live" in name.lower() \
             or "version" in name.lower() \
             or "bundle" in name.lower() \
-            or "single" in name.lower() \
-            or "ep" in name.lower() \
             or "mix" in name.lower() \
             or "edit" in name.lower():
             continue
